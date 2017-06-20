@@ -30,7 +30,7 @@ webview 에 javascript interface 를 추가하여 위에서 호출하는 자바�
 webView.addJavascriptInterface(adbrixHybridInterface, "Adbrix");
 ~~~
 
-> 위 코드의 "Adbrix" 는 자바스크립트의 window.[name].[method] 의 name과 반드시 동일해야 합니다.
+> 위 코드의 "Adbrix" 는 자바스크립트의 **window.[name].[method] 의 name과 반드시 동일**해야 합니다.
 
 
 <br>
