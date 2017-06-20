@@ -30,7 +30,7 @@ webview 에 javascript interface 를 추가하여 위에서 호출하는 자바�
 webView.addJavascriptInterface(adbrixHybridInterface, "Adbrix");
 ~~~
 
-> 위 코드의 "Adbrix" 는 자바스크립트의 **window.[name].[method] 의 name과 반드시 동일**해야 합니다.
+> 위 코드의 "Adbrix" 는 자바스크립트의 ~~~window.[name].[method]~~~ 의 name과 반드시 동일해야 합니다.
 
 
 <br>
@@ -75,7 +75,7 @@ MainActivity.java 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페�
 <br>
 <br>
 
-###### 3.4.2. SDK 로그에서 확인
+##### 3.4.2. SDK 로그에서 확인
 
 안드로이드SDK에서 출력하는 로그를 통해서 정상적으로 데이터가 전달되는지를 확인할 수 있습니다.
 + TAG Filter : IGAW_QA
