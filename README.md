@@ -36,7 +36,7 @@ webView.addJavascriptInterface(adbrixHybridInterface, "Adbrix");
 <br>
 
 ### 3. DEMO
-git repository에서 안드로이드 프로젝트를 다운로드하여 직접 테스트를 해볼 수 있습니다.   
+[[git repository]](./sample_source)에서 안드로이드 프로젝트를 다운로드하여 직접 테스트를 해볼 수 있습니다.   
 
 **필요한것**
 + 앱키, 해시키 [[가이드 확인하기]](http://help.igaworks.com/hc/ko/3_3/Content/Article/app_registration)
