@@ -1,46 +1,17 @@
 ﻿/*
-    AdBrix Hybrid Sample Javascript for Android.
+    AdBrix Hybrid Sample Javascript for Android and IOS.
 */
-
-
-
 
 $(document).ready(function(){
     if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     
     var platform = "";
-    // 모바일 에이전트 구분
-    var isMobile = {
-        Android: function () {
-                return navigator.userAgent.match(/Android/i) == null ? false : true;
-        },
-        IOS: function () {
-                return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
-        },
-        any: function () {
-            return (isMobile.Android() || isMobile.IOS());
-        }
-    };
-
-    if(isMobile.any()){
-        if(isMobile.Android()){
-            platform = "aos";
-            console.log("AOS BROWSER DETECTED!");
-        }else if(isMobile.IOS()){
-            platform = "ios";            
-            console.log("IOS BROWSER DETECTED!");
-        }else{
-            platform = "unknown";
-            alert("Only Support AOS and IOS OS, Please check OS platform");
-            console.log("Only Support AOS and IOS OS, Please check OS platform");
-        }            
-    }    
-
-
+    commonUtils();
 
     $("#fte_call_btn").click(function (e) {
         var activity_name = $('#fte_call').find('input[name="fte_activity"]').val();
-        
+        console.log(activity_name);
+
         if(platform == 'aos'){
             window.Adbrix.firstTimeExperience(activity_name);
         }else if(platform == 'ios'){
@@ -51,12 +22,13 @@ $(document).ready(function(){
             alert("Only Support AOS and IOS OS, Please check OS platform");
             console.log("Only Support AOS and IOS OS, Please check OS platform");
             return;
-        }
-        console.log(activity_name);
+        }        
     });
 
     $("#ret_call_btn").click(function (e) {
         var activity_name = $('#ret_call').find('input[name="ret_activity"]').val();
+        console.log(activity_name);
+        
         if(platform == 'aos'){
             window.Adbrix.retention(activity_name);
         }else if(platform == 'ios'){
@@ -65,9 +37,7 @@ $(document).ready(function(){
             alert("Only Support AOS and IOS OS, Please check OS platform");
             console.log("Only Support AOS and IOS OS, Please check OS platform");
             return;
-        }
-        
-        console.log(activity_name);
+        }        
     });
 
     $("#purchase_call_btn").click(function () {
@@ -99,11 +69,48 @@ $(document).ready(function(){
             console.log("Only Support AOS and IOS OS, Please check OS platform");
             return;
         }
-
-        
-
     });
 
+    function commonUtils(){
+        // 모바일 에이전트 구분
+        var isMobile = {
+            Android: function () {
+                return navigator.userAgent.match(/Android/i) == null ? false : true;
+            },
+            IOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+            },
+            any: function () {
+                return (isMobile.Android() || isMobile.IOS());
+            }
+        };
 
+        if(isMobile.any()){
+            if(isMobile.Android()){
+                platform = "aos";
+                console.log("AOS BROWSER DETECTED!");
+            }else if(isMobile.IOS()){
+                platform = "ios";            
+                console.log("IOS BROWSER DETECTED!");
+            }else{
+                platform = "unknown";
+                alert("Only Support AOS and IOS OS, Please check OS platform");
+                console.log("Only Support AOS and IOS OS, Please check OS platform");
+            }            
+        }  
+        
+        // string builder
+        if (!String.prototype.format) {
+            String.prototype.format = function() {
+                var args = arguments;
+                return this.replace(/{(\d+)}/g, function(match, number) { 
+                    return typeof args[number] != 'undefined'
+                    ? args[number]
+                    : match
+                    ;
+                });
+            };
+        }
+    }
 
 });
