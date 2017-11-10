@@ -7,8 +7,14 @@
 애드브릭스를 연동하는데 필요한 기본적인 연동사항들은 [Help Center](http://help.igaworks.com)를 참고해주세요.  
 <br>
 
+
+
+------
+
+
+
 ### 1. WEB PAGE
-#### 1.1. For Android 
+### 1.1. For Android 
 
 웹에서 발생한 이벤트 정보를 ANDROID NATIVE 로 전달하여야 합니다.  
 
@@ -26,7 +32,7 @@ window.adbrix.retention("sample_data");
 
 
 
-#### 1.2. For iOS
+### 1.2. For iOS
 
 웹에서 발생한 이벤트 정보를 iOS NATIVE 로 전달하여야 합니다.
 
@@ -44,6 +50,10 @@ window.location("adbrix://ret?activity=sample_data")
 
 
 
+------
+
+
+
 ### 2. ANDROID NATIVE
 웹에서 전달한 이벤트를 수신하여 적절한 AdBrix api를 호출합니다.  
 webview 에 javascript interface 를 추가하여 웹에서 호출하는 자바스크립트 이벤트를 캐치할 수 있습니다.
@@ -52,13 +62,13 @@ webview 에 javascript interface 를 추가하여 웹에서 호출하는 자바�
 webView.addJavascriptInterface(adbrixHybridInterface, "adbrix");
 ~~~
 
-> 위 코드의 "Adbrix" 는 자바스크립트의 **window.[name].[method] 의 name과 반드시 동일**해야 합니다.
+> 위 코드의 "adbrix" 는 자바스크립트의 **window.[name].[method] 의 name과 반드시 동일**해야 합니다.
 
 <br>
 
 
 
-#### 2.1. DEMO
+### 2.1. DEMO
 [[git repository]](./sample_source)에서 안드로이드 프로젝트를 다운로드하여 직접 테스트를 해볼 수 있습니다.   
 
 **필요한것**
@@ -83,6 +93,10 @@ MainActivity.java 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페�
 프로젝트를 빌드하면 설정한 웹 페이지가 로드되어지고, 이 페이지에서 구현한 이벤트를 발생하여 Javascript Interface를 동작할 수 있습니다.
 
 <br>
+
+
+
+------
 
 
 
@@ -120,7 +134,7 @@ UIWebView에 javascript interface를 추가하여 웹에서 호출하는 자바�
 
 
 
-#### 3.1. DEMO
+### 3.1. DEMO
 
 [[git repository]](./sample_source)에서 안드로이드 프로젝트를 다운로드하여 직접 테스트를 해볼 수 있습니다.   
 
@@ -154,12 +168,14 @@ ViewController.m 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페이
 
 
 
+------
+
 
 
 ### 4. 연동 확인
 
 
-#### 4.1. 애드브릭스 어드민에서 확인  
+### 4.1. 애드브릭스 어드민에서 확인  
 
 정상적으로 구현되어 전달된 이벤트는 [애드브릭스 -> 설정 관리 -> SDK 연동상태] 메뉴에서 확인할 수 있습니다.  
 ![연동상태확인](./images/integration_status_check_screen.png)
@@ -173,7 +189,9 @@ ViewController.m 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페이
 <br>
 <br>
 
-#### 4.2. SDK 로그에서 확인
+### 4.2. SDK 로그에서 확인
+
+
 
 #### 4.2.1. ANDROID
 
