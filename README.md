@@ -14,6 +14,8 @@
 
 
 ### 1. WEB PAGE
+<br>
+
 ### 1.1. For Android 
 
 웹에서 발생한 이벤트 정보를 ANDROID NATIVE 로 전달하여야 합니다.  
@@ -73,7 +75,8 @@ webView.addJavascriptInterface(adbrixHybridInterface, "adbrix");
 
 **필요한것**
 + 앱키, 해시키 [[가이드 확인하기]](http://help.igaworks.com/hc/ko/3_3/Content/Article/app_registration)
-  <br>
+
+<br>
 
 #### 2.1.1. 앱키&해시키 설정
 발급받은 앱키, 해시키를 안드로이드 샘플 프로젝트의 AndroidManifest.xml 파일에 세팅합니다.
@@ -131,7 +134,7 @@ UIWebView에 javascript interface를 추가하여 웹에서 호출하는 자바�
     return YES;
 }
 ```
-
+<br>
 
 
 ### 3.1. DEMO
@@ -142,7 +145,7 @@ UIWebView에 javascript interface를 추가하여 웹에서 호출하는 자바�
 
 - 앱키, 해시키  [[가이드 확인하기]](http://help.igaworks.com/hc/ko/3_3/Content/Article/app_registration)
 
-  <br>
+<br>
 
 #### 3.1.1. 앱키&해시키 설정
 
@@ -174,6 +177,7 @@ ViewController.m 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페이
 
 ### 4. 연동 확인
 
+<br>
 
 ### 4.1. 애드브릭스 어드민에서 확인  
 
@@ -191,7 +195,7 @@ ViewController.m 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페이
 
 ### 4.2. SDK 로그에서 확인
 
-
+<br>
 
 #### 4.2.1. ANDROID
 
@@ -230,6 +234,7 @@ ViewController.m 파일의 *__HYBRID_SAMPLE_PAGE_URL__* 에 구현한 웹 페이
 > ADBrixTracer 로그에서 확인되는 Json String 중에서 ResultMsg 가 "Operation Complete" 인지를 확인합니다.
 
 
+<br>
 
 #### 4.2.2 iOS 
 
