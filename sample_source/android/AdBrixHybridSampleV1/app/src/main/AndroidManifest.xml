@@ -3,6 +3,7 @@
     package="com.iga.adbrixhybridsamplev1">
 
     <application
+        android:name="com.igaworks.IgawDefaultApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,9 +17,9 @@
         </activity>
 
         <!-- Have to Input your Adbrix App Key Here -->
-        <meta-data android:name="igaworks_app_key" android:value="" />
+        <meta-data android:name="igaworks_app_key" android:value="이곳에 애드브릭스 앱키를 넣어주세요" />
         <!-- Have to Input your Adbrix Hash Key Here -->
-        <meta-data android:name="igaworks_hash_key" android:value="" />
+        <meta-data android:name="igaworks_hash_key" android:value="이곳에 애드브릭스 해시키를 넣어주세요" />
         <!-- Have to Adbrix Logger Mode for Debugging -->
         <meta-data android:name="adbrix_logger_mode" android:value="true" />
 

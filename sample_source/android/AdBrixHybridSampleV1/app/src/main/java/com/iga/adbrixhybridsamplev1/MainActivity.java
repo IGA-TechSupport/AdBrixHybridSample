@@ -2,10 +2,8 @@ package com.iga.adbrixhybridsamplev1;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -16,8 +14,6 @@ import com.igaworks.adbrix.IgawAdbrix;
 import com.igaworks.commerce.IgawCommerce;
 import com.igaworks.commerce.IgawCommerceProductCategoryModel;
 import com.igaworks.commerce.IgawCommerceProductModel;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -122,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                  * IgawCommerceProductCategoryModel.create("cat1","cat2","cat3","cat4","cat5");
                  */
                 // purchase api call here!!
-                IgawAdbrix.Commerce.pur
+
                 IgawCommerceProductModel productModel =
                         new IgawCommerceProductModel()
                                 .setProductID(productId)
@@ -133,29 +129,11 @@ public class MainActivity extends AppCompatActivity {
                                 .setCurrency(IgawCommerce.Currency.getCurrencyByCountryCode(currencyCode))
                                 .setCategory(IgawCommerceProductCategoryModel.create(category))
                                 .setExtraAttrs(null);
+
+                IgawAdbrix.purchase(MainActivity.this, "order_id_123123", productModel, IgawCommerce.IgawPaymentMethod.CreditCard);
             }catch (Exception e){
                 Log.e(LOG_TAG, "parameter error w/ " + e.getMessage());
             }
-
-
-
-
-            /* 상품 정보 모델 생성 */
-            ArrayList<IgawCommerceProductModel> productModels = new ArrayList<IgawCommerceProductModel>() {{
-                add(new IgawCommerceProductModel()
-                        .setProductID("30290121")
-                        .setProductName("여름한정 떨이상품 크록스 20%할인")
-                        .setPrice(10000)
-                        .setQuantity(1)
-                        .setDiscount(0)
-                        .setCurrency(IgawCommerce.Currency.KR_KRW)
-                        .setCategory(cats)
-                        .setExtraAttrs("color", "메탈블랙"));
-            }};
-
-
-
-
         }
 
     }
@@ -170,22 +148,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         IgawCommon.endSession();
-    }
-
-    String user = getMetadata("");
-
-    public  String getMetadata(String name) {
-        try {
-            ApplicationInfo appInfo = getApplicationContext().getPackageManager().getApplicationInfo(
-                    getApplicationContext().getPackageName(), PackageManager.GET_META_DATA);
-            if (appInfo.metaData != null) {
-                return appInfo.metaData.getString(name);
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            // if we can’t find it in the manifest, just return null
-        }
-
-        return null;
     }
 
 
